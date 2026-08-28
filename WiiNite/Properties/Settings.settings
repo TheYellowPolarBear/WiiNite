@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WiiBalanceWalker.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="ActionLeft" Type="System.String" Scope="User">
@@ -15,7 +15,7 @@
       <Value Profile="(Default)">Key S</Value>
     </Setting>
     <Setting Name="ActionModifier" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Key LShiftKey</Value>
+      <Value Profile="(Default)">Do Nothing</Value>
     </Setting>
     <Setting Name="ActionJump" Type="System.String" Scope="User">
       <Value Profile="(Default)">Key Space</Value>

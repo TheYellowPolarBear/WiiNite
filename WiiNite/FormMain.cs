@@ -75,8 +75,8 @@ namespace WiiNite
             checkBox_ShowValuesInConsole.Checked = Properties.Settings.Default.ShowValuesInConsole;
             checkBox_EnableJoystick.Checked = Properties.Settings.Default.EnableJoystick;
             checkBox_DisableActions.Checked = Properties.Settings.Default.DisableActions;
-            checkBox_StartupAutoConnect.Checked = Properties.Settings.Default.EnableJoystick;
-            checkBox_AutoTare.Checked = Properties.Settings.Default.EnableJoystick;
+            checkBox_StartupAutoConnect.Checked = Properties.Settings.Default.StartupAutoConnect;
+            checkBox_AutoTare.Checked = Properties.Settings.Default.AutoTare;
             checkBox_StartMinimized.Checked = Properties.Settings.Default.StartMinimized;
 
             if (checkBox_StartupAutoConnect.Checked)

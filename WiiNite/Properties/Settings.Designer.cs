@@ -73,7 +73,7 @@ namespace WiiNite.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Key LShiftKey")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Do Nothing")]
         public string ActionModifier {
             get {
                 return ((string)(this["ActionModifier"]));

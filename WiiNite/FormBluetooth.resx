@@ -117,28 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="clipboardCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAYAAADkgu3FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEkSURBVEhL7ZWxSgQxGISDiFhdfAELsZEtNrCZ+QsR01lb
-        +AQ+hpVwrbV2voAgiG9gb2FlqdgqtnKCekRyi/ezXrLFNcd9MEt+kplhw8IaM81KfIQQVkMI61VVrZVo
-        4ivl9zDJx7qu3/qI5L0OmwnJS5I/feWc+9BZMwFwl8zfei9HusIyuopEZABgl+R+iQAEEdmaTlboovhR
-        kLzRV1Wg16ZptnV+iy4CMIzrjqCsvPdPOr9FF3nvryczgOOcROQwvk3yfOr8Fl1E8urvXALJ5+QZ6b2W
-        ZVEXy6LFKbpNh77iPLci7/0egHMAZ3GeW5FmsYsAbOaUfisvvYsAXCRTbwF413n/4pzbAPCgQwo0EpED
-        nZdjxxhzYow5tdaWaGitPdIhY1g5f8bxU8CDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="label_Info2.Text" xml:space="preserve">
-    <value>Based on your bluetooth mac address, this is your special pin code. use this code when establishing connection with your wii balance board, so the device remembers the host bluetooth adapter, even if the batteries are removed.
-
-- In future connections all you would need to do is press the power button on the Wii device and connect while its light is flashing.
-
-- This option is highly recommended. If establishing the connection with the shown pin code fails, use an empty code (no code) to establish a temporary connection.</value>
-  </data>
   <data name="label_Info1.Text" xml:space="preserve">
     <value>- Removes all existing bluetooth devices with 'Nintendo' in the name.
 

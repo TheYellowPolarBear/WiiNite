@@ -1064,6 +1064,8 @@
             // checkBox_AutoTare
             // 
             this.checkBox_AutoTare.AutoSize = true;
+            this.checkBox_AutoTare.Checked = true;
+            this.checkBox_AutoTare.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_AutoTare.Location = new System.Drawing.Point(6, 42);
             this.checkBox_AutoTare.Name = "checkBox_AutoTare";
             this.checkBox_AutoTare.Size = new System.Drawing.Size(201, 17);
@@ -1099,7 +1101,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WiiNite v0.0.1";
+            this.Text = "WiiNite v0.0.2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox_RawWeight.ResumeLayout(false);
