@@ -1,4 +1,4 @@
-﻿namespace WiiBalanceWalker
+﻿namespace WiiNite
 {
     partial class FormBluetooth
     {
@@ -266,6 +266,7 @@
             this.Name = "FormBluetooth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add/Remove Bluetooth Wii Device";
+            this.Load += new System.EventHandler(this.FormBluetooth_Load);
             this.groupBox_Info2.ResumeLayout(false);
             this.groupBox_Info2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

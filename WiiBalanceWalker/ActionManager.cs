@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using InputManager;
 
-namespace WiiBalanceWalker
+namespace WiiNite
 {
     /// <summary>Actions place holders as controls are passed after they load.</summary>
     public class ActionList

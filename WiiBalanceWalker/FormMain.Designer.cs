@@ -1,4 +1,4 @@
-﻿namespace WiiBalanceWalker
+﻿namespace WiiNite
 {
     partial class FormMain
     {
@@ -109,6 +109,7 @@
             this.startupOptions = new System.Windows.Forms.GroupBox();
             this.checkBox_StartMinimized = new System.Windows.Forms.CheckBox();
             this.checkBox_AutoTare = new System.Windows.Forms.CheckBox();
+            this.jumpTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox_RawWeight.SuspendLayout();
             this.groupBox_OffsetWeight.SuspendLayout();
             this.groupBox_OffsetWeightRatio.SuspendLayout();
@@ -1071,6 +1072,12 @@
             this.checkBox_AutoTare.UseVisualStyleBackColor = true;
             this.checkBox_AutoTare.CheckedChanged += new System.EventHandler(this.checkBox_AutoTare_CheckedChanged);
             // 
+            // jumpTimer
+            // 
+            this.jumpTimer.Enabled = true;
+            this.jumpTimer.Interval = 1500;
+            this.jumpTimer.Tick += new System.EventHandler(this.jumpTimer_Tick);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1088,10 +1095,11 @@
             this.Controls.Add(this.groupBox_OffsetWeight);
             this.Controls.Add(this.groupBox_RawWeight);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Wii Balance Walker - Version 0.5";
+            this.Text = "WiiNite v0.0.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox_RawWeight.ResumeLayout(false);
@@ -1210,6 +1218,7 @@
         private System.Windows.Forms.CheckBox checkBox_StartupAutoConnect;
         private System.Windows.Forms.CheckBox checkBox_AutoTare;
         private System.Windows.Forms.CheckBox checkBox_StartMinimized;
+        private System.Windows.Forms.Timer jumpTimer;
     }
 }
 

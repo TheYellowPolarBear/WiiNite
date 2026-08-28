@@ -4,7 +4,7 @@ using InTheHand.Net.Sockets;
 using InTheHand.Net.Bluetooth;
 using WiimoteLib;
 
-namespace WiiBalanceWalker
+namespace WiiNite
 {
     public partial class FormBluetooth : Form
     {
@@ -216,6 +216,11 @@ namespace WiiBalanceWalker
             }
             ((Button)sender).Enabled = true;
             
+        }
+
+        private void FormBluetooth_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

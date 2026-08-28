@@ -17,7 +17,7 @@ using System.Timers;
 using System.Windows.Forms;
 using WiimoteLib;
 
-namespace WiiBalanceWalker
+namespace WiiNite
 {
     public partial class FormMain : Form
     {
@@ -36,6 +36,8 @@ namespace WiiBalanceWalker
         float oaTopRight    = 0f;
         float oaBottomLeft  = 0f;
         float oaBottomRight = 0f;
+
+        bool jumpInProgress = false;
 
         public FormMain()
         {
@@ -230,6 +232,8 @@ namespace WiiBalanceWalker
                 return;
             }
 
+            if (jumpInProgress) return;
+
             // Get the current sensor KG values. (no temperature / latitude correction, can't set zero point properly.)
 
             var rwWeight      = wiiDevice.WiimoteState.BalanceBoardState.WeightKg;
@@ -372,33 +376,42 @@ namespace WiiBalanceWalker
             var sendDiagonalLeft  = false;
             var sendDiagonalRight = false;
 
-            if (brX < (float)(50 - numericUpDown_TLR.Value)) sendLeft     = true;
-            if (brX > (float)(50 + numericUpDown_TLR.Value)) sendRight    = true;
-            if (brY < (float)(50 - numericUpDown_TFB.Value)) sendForward  = true;
-            if (brY > (float)(50 + numericUpDown_TFB.Value)) sendBackward = true;
-
-            if      (brX < (float)(50 - numericUpDown_TMLR.Value)) sendModifier = true;
-            else if (brX > (float)(50 + numericUpDown_TMLR.Value)) sendModifier = true;
-            else if (brY < (float)(50 - numericUpDown_TMFB.Value)) sendModifier = true;
-            else if (brY > (float)(50 + numericUpDown_TMFB.Value)) sendModifier = true;
-
             // Detect jump but use a time limit to stop it being active while off the board.
 
             if (owWeight < 1f)
             {
-                if (DateTime.UtcNow.Subtract(jumpTime).Seconds < 2) sendJump = true;
+                if (DateTime.UtcNow.Subtract(jumpTime).Seconds < 2)
+                {
+                    sendJump = true;
+                    jumpInProgress = true;
+                }
             }
             else
             {
                 jumpTime = DateTime.UtcNow;
             }
 
-            // Check for diagonal pressure only when no other movement actions are active.
+            // Prevent other buttons from being pressed upon jump
 
-            if (!sendLeft && !sendRight && !sendForward && !sendBackward && brDF > 15)
+            if (!sendJump)
             {
-                if (brDL > brDR) sendDiagonalLeft  = true;
-                else             sendDiagonalRight = true;
+                if (brX < (float)(50 - numericUpDown_TLR.Value)) sendLeft = true;
+                if (brX > (float)(50 + numericUpDown_TLR.Value)) sendRight = true;
+                if (brY < (float)(50 - numericUpDown_TFB.Value)) sendForward = true;
+                if (brY > (float)(50 + numericUpDown_TFB.Value)) sendBackward = true;
+
+                if (brX < (float)(50 - numericUpDown_TMLR.Value)) sendModifier = true;
+                else if (brX > (float)(50 + numericUpDown_TMLR.Value)) sendModifier = true;
+                else if (brY < (float)(50 - numericUpDown_TMFB.Value)) sendModifier = true;
+                else if (brY > (float)(50 + numericUpDown_TMFB.Value)) sendModifier = true;
+
+                // Check for diagonal pressure only when no other movement actions are active.
+
+                if (!sendLeft && !sendRight && !sendForward && !sendBackward && brDF > 15)
+                {
+                    if (brDL > brDR) sendDiagonalLeft = true;
+                    else sendDiagonalRight = true;
+                }
             }
 
             // Display actions.
@@ -595,6 +608,11 @@ namespace WiiBalanceWalker
             var isChecked = ((CheckBox)sender).Checked;
             Properties.Settings.Default.StartMinimized = isChecked;
             Properties.Settings.Default.Save();
+        }
+
+        private void jumpTimer_Tick(object sender, EventArgs e)
+        {
+            if (jumpInProgress) jumpInProgress = false;
         }
     }
 }

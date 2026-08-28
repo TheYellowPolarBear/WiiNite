@@ -26,10 +26,10 @@ using System.Windows.Forms;
 
 // Don't forget to add this
 using vJoyInterfaceWrap;
-using WiiBalanceWalker;
+using WiiNite;
 using WiimoteLib;
 
-namespace WiiBalanceWalker
+namespace WiiNite
 {
     class VJoyFeeder
     {
