@@ -16,8 +16,7 @@ This is a project intended for an upcoming [TheYellowPolarBear](https://www.yout
 
 ### WiiNite v0.0.3 changelog:
 - Added support for 32-bit operating systems, including Windows XP SP3
-- Cleaned the 'Add/Remove bluetooth Wii Device' form's UI
-- Cleaned some file names
+- Cleaned 'Add/Remove bluetooth Wii Device' form's UI
 - Added an NT OS version checker to make getting to the relevant Bluetooth pairing settings easier
 
 ### WiiNite v0.0.2 changelog:
