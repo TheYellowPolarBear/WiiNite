@@ -125,13 +125,9 @@
 - If you still cannot find your device after using "remove existing", try uninstalling the bluetooth/HID drivers using device manager, and restart your computer.</value>
   </data>
   <data name="label_Info4.Text" xml:space="preserve">
-    <value>In order to pair your Wii balance board to your computer on Windows 10:
+    <value>Wii Balance Board pairing must be done through the Control Panel. In Windows XP and Vista, this is done thorugh the Bluetooth Pairing setting. In subsequent releases, this is done through Devices and Printers
 
-- Press the red sync button in the battery compartment of your Wii device. The device light should be flashing. 
-
-- Go to control panel -&gt; Add a device
-
-- Select your nintendo balance board device.</value>
+Once you're in the pairing stage, press the red sync button under the battery compartment of the board until the blue light is flashing. Click the device, and if it asks for a password, leave it blank.</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>

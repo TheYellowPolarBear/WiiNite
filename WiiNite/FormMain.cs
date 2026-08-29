@@ -1,8 +1,9 @@
 ﻿//----------------------------------------------------------------------------------------------------------------------+
-// WiiBalanceWalker v0.5, by Shachar Liberman
+// WIiNite v0.0.3, by TheYellowPolarBear & ByteofMelon
+// Based off WiiBalanceWalker v0.5, by Shachar Liberman
 // Originally Released by Richard Perry from GreyCube.com - Under the Microsoft Public License.
 //
-// released for windows 10 x64 systems, x86 should be supported too.
+// Intended for x86 OS's from Windows XP SP3 onwards
 //
 // Uses lshachar's WiimoteLib DLL:                  https://github.com/lshachar/WiimoteLib
 // Uses the 32Feet.NET bluetooth DLL:               http://32feet.codeplex.com/

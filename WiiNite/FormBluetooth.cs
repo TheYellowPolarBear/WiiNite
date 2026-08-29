@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 using InTheHand.Net.Sockets;
 using InTheHand.Net.Bluetooth;
 using WiimoteLib;
+using System.Media;
 
 namespace WiiNite
 {
@@ -65,7 +67,7 @@ namespace WiiNite
             }
         }
 
-        private void RemoveExisting_Click(object sender, EventArgs e) //this is has been removed in the form
+        private void RemoveExisting_Click(object sender, EventArgs e) //this has been removed in the form
         {
             ((Button)sender).Enabled = false;
             var btRemoved = 0;
@@ -97,9 +99,36 @@ namespace WiiNite
             
         }
 
+        private void dapBtn_Click(object sender, EventArgs e)
+        {
+            // XP & Vista use different control panel settings for Bluetooth pairing
+            // NT 5.1/2 or 6.0 indicate XP/Vista
+            string oldLink = "bthprops.cpl";
+            string newLink = "shell:::{A8A91A66-3A7D-4424-8D24-04E180695C7A}";
+            var osMajor = Environment.OSVersion.Version.Major;
+            var osMinor = Environment.OSVersion.Version.Minor;
+            bool isXPorVista = osMajor == 5 || (osMajor == 6 && osMinor == 0);
+            string link = isXPorVista ? oldLink : newLink;
+
+            try
+            {
+                System.Diagnostics.Process.Start(link);
+            }
+            catch (Exception ex)
+            {
+                DialogResult result;
+                result = MessageBox.Show("Invalid Control Panel item or operating system. Please refer to the GitHub README.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/TheYellowPolarBear/WiiNite/blob/master/README.md");
+                }
+            }
+        }
+
         private void FormBluetooth_Load(object sender, EventArgs e)
         {
-
+             
+            label1.Text = "You are using Windows NT " + Environment.OSVersion.Version.Major.ToString() + "." + Environment.OSVersion.Version.Minor.ToString();
         }
     }
 }

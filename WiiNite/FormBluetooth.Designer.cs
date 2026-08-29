@@ -40,7 +40,9 @@
             this.button_DeviceSearch = new System.Windows.Forms.Button();
             this.label_Info4 = new System.Windows.Forms.Label();
             this.groupBox_Info1 = new System.Windows.Forms.GroupBox();
+            this.dapBtn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox_Info3.SuspendLayout();
             this.groupBox_Info4.SuspendLayout();
             this.groupBox_Info1.SuspendLayout();
@@ -135,15 +137,37 @@
             this.label_Info4.Size = new System.Drawing.Size(566, 102);
             this.label_Info4.TabIndex = 6;
             this.label_Info4.Text = resources.GetString("label_Info4.Text");
+            this.label_Info4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox_Info1
             // 
+            this.groupBox_Info1.Controls.Add(this.label1);
+            this.groupBox_Info1.Controls.Add(this.dapBtn);
             this.groupBox_Info1.Controls.Add(this.label_Info4);
             this.groupBox_Info1.Location = new System.Drawing.Point(12, 12);
             this.groupBox_Info1.Name = "groupBox_Info1";
-            this.groupBox_Info1.Size = new System.Drawing.Size(783, 123);
+            this.groupBox_Info1.Size = new System.Drawing.Size(780, 123);
             this.groupBox_Info1.TabIndex = 1;
             this.groupBox_Info1.TabStop = false;
+            // 
+            // dapBtn
+            // 
+            this.dapBtn.Location = new System.Drawing.Point(25, 35);
+            this.dapBtn.Name = "dapBtn";
+            this.dapBtn.Size = new System.Drawing.Size(106, 60);
+            this.dapBtn.TabIndex = 7;
+            this.dapBtn.Text = "Open Control Panel Setting";
+            this.dapBtn.UseVisualStyleBackColor = true;
+            this.dapBtn.Click += new System.EventHandler(this.dapBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(143, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
             // 
             // FormBluetooth
             // 
@@ -167,6 +191,7 @@
             this.groupBox_Info3.PerformLayout();
             this.groupBox_Info4.ResumeLayout(false);
             this.groupBox_Info1.ResumeLayout(false);
+            this.groupBox_Info1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +209,7 @@
         private System.Windows.Forms.CheckBox checkBox_RemoveExisting;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button RemoveExisting;
+        private System.Windows.Forms.Button dapBtn;
+        private System.Windows.Forms.Label label1;
     }
 }
